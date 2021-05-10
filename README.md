@@ -3,9 +3,8 @@ MATLAB codes accompanying a survey paper on hybrid projection methods.
 
 # AUTHORS:
 
-        Julianne Chung, Department of Mathematics, Virginia Tech
-
-	Silvia Gazzola, Department of Mathematical Sciences, University of Bath
+Julianne Chung, Department of Mathematics, Virginia Tech
+Silvia Gazzola, Department of Mathematical Sciences, University of Bath
 	
 #   REFERENCE:
 

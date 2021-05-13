@@ -24,11 +24,11 @@ n = 256;
 Kall = kronApprox(A);
 bn = PRnoise(b);
 figure, imagesc(reshape(x,n,n)), colormap gray, axis image, axis off
-title('true image')
+title('true image'),
 figure, imagesc(reshape(bn,n,n)), colormap gray, axis image, axis off
-title('observed image')
+title('observed image'),
 figure, imagesc(PSFshow), colormap gray, axis image, axis off
-title('PSF')
+title('PSF'),
 
 %% approximate the blurring matrix and compute naive and TSVD solutions
 A1 = Kall.a{1};
@@ -44,12 +44,16 @@ trunc = 35;
 Xreg = (VB1(:,1:trunc)*diag(1./diag(SA1(1:trunc,1:trunc)))*UB1(:,1:trunc)')*(B*(UA1(:,1:trunc)*diag(1./diag(SA1(1:trunc,1:trunc)))*VA1(:,1:trunc)'));
 
 figure, imagesc(Xreg), colormap gray, axis image, axis off
-% % try to run some solvers
+colorbar('FontSize',18)
+
+ %% get a regularized solution
 opt.x_true = x;
 opt.NoStop = 'on';
 [Xgk1, infogk1] = IRhybrid_lsqr(A, bn, opt);
 
 figure, imagesc(reshape(Xnaive,ProbInfo.xSize)), colormap gray, axis image, axis off
 title('inverse solution')
+colorbar('FontSize',18)
 figure, imagesc(reshape(Xreg,ProbInfo.xSize)), colormap gray, axis image, axis off
 title('regularized solution')
+colorbar('FontSize',18)

@@ -43,3 +43,8 @@
 %                       Generates Figure 3.2 in the paper to illustrate 
 %                           difference basis images for Arnoldi and
 %                           Golub-Kahan bidiagonalization
+%  
+%  compare_regParamChoice.m
+%                       Generates part of Figure 3.3 in the paper to 
+%                       compare different regularization parameters for
+%                       image deblurring

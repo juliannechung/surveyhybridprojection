@@ -1,4 +1,4 @@
-% compare_regParamChoice
+% compare_regParamChoice.m
 
 % Generates part of Figure 3.3 in the paper 
 %   "Computational Methods for Large Inverse Problems:

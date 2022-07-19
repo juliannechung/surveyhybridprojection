@@ -1,7 +1,7 @@
 %% Contents.m
 %   This folder contains MATLAB code to accompany the paper:
 %
-%      %   "Computational Methods for Large Inverse Problems:
+%     "Computational Methods for Large Inverse Problems:
 %       A Survey on Hybrid Projection Methods"
 %             by Julianne Chung (Virginia Tech) and
 %                Silvia Gazzola (University of Bath)
@@ -12,9 +12,9 @@
 % 
 %    (2) AIR Tools II package from: https://github.com/jakobsj/AIRToolsII
 %
-% Chung and Gazzola, May 2021
+% Chung and Gazzola, May 2022
 
-%% DEMOs on how to use HyBRrecycle
+%% DEMOs
 %
 %   generate_blur.m     Sets up and runs a 2D image deblurring problem
 %                           corresponding to the results in 
@@ -48,3 +48,15 @@
 %                       Generates part of Figure 3.3 in the paper to 
 %                       compare different regularization parameters for
 %                       image deblurring
+%
+%   estimate_uq_deblur.m
+%                       Generates Figure 4.3 in the paper to use GKB and
+%                       RSVD to estimate the diagonals and the sum of 
+%                       elements of the approximate posterior covariance 
+%                       matrix for deblurring
+%
+%   estimate_uq_tomo.m
+%                       Generates Figure 4.3 in the paper to use GKB and
+%                       RSVD to estimate the diagonals and the sum of 
+%                       elements of the approximate posterior covariance 
+%                       matrix for tomography

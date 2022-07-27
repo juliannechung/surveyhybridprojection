@@ -80,7 +80,7 @@ figure,
 tlt =tiledlayout(1,2);
 nexttile
 imagesc(reshape(d(:,iter),ProbInfo.xSize)), 
-hold on, plot([0 0 256  256 0 ],[0 256 256 0 0],'color',colors(1), 'LineWidth',3);
+hold on, plot([0 0 n n 0 ],[0 n n 0 0],'color',colors(1), 'LineWidth',3);
 colormap gray, axis image, axis off
 caxis manual
 caxis([bottom top]);
@@ -89,7 +89,7 @@ set(gca,'fontsize',22)
 
 nexttile
 imagesc(reshape(d_rsvd(:,iter),ProbInfo.xSize)),
-hold on, plot([0 0 256  256 0 ],[0 256 256 0 0],'color',colors(2), 'LineWidth',3);
+hold on, plot([0 0 n n 0 ],[0 n n 0 0],'color',colors(2), 'LineWidth',3);
 colormap gray, axis image, axis off
 caxis manual
 caxis([bottom top]);
@@ -109,13 +109,14 @@ set(gcf,'Position',[100 100 xlength ylength])
 
 %% plot sum of covariance-variance estimates
 figure, semilogy(dsum,'-', 'LineWidth',2, 'color',colors(1)), hold on,
-semilogy(dsum_rsvd,'--', 'LineWidth',2, 'color',colors(2))
-semilogy([infogk_wgcv_auto.its infogk_wgcv_auto.its],[10^-1 10^3],':k')
+semilogy(dsum_rsvd,'--', 'LineWidth',2, 'color',colors(2)),
+ylims = get(gca, 'ylim');
+semilogy([infogk_wgcv_auto.its infogk_wgcv_auto.its],ylims,':k')
 % legend('GKB','RSVD','','Location','east')
 
 ylabel('sum of variance-covariance')
 xlabel('iteration')
-axis([0 opt.MaxIter 10^-1 10^3])
+axis([0 opt.MaxIter ylims])
 set(gca,'fontsize',22)
 
 xlength = 600;
